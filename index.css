@@ -1,0 +1,21 @@
+/* Color Variables */
+:root {
+    --bg: rgb(10, 11, 16);
+    --text-primary: #ffffff;
+}
+
+/* Boilerplate */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    background: var(--bg);
+}
