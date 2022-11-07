@@ -13,10 +13,23 @@ var floorInputs = document.querySelectorAll(".floorBtn");
 // others
 var reportForm = document.querySelector("#reportForm");
 
+//Grid
+var wingA = document.querySelector("#wingA");
+var wingB = document.querySelector("#wingB");
+var wingC = document.querySelector("#wingC");
+var wingD = document.querySelector("#wingD");
+
 //FORM VALUE TRACKERS
 var wingValue = null;
 var floorValue = null;
 var allowSubmit = false;
+
+
+//####INFO CARDS###########
+
+
+//#########################
+
 
 //###OPEN AND CLOSE FORM###
 function openForm() {

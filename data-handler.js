@@ -21,10 +21,10 @@ async function pushReport() {
                 wing: wingValue,
                 floor: floorValue,
                 description: descInput.value,
-                name: nameInput.value
+                name: nameInput.value == "" ? "Anonymous" : "nameInput.value"
             }]).select()
 
-        // Fail :(
+        // Error Handling
         if (error) {
             console.log(error);
         }
@@ -47,14 +47,34 @@ async function pullReports() {
     const { data, error } = await _supabase
         .from('reports')
         .select()
+        .order('id', { ascending: false })
 
     // Catch error
     if (error) { alert("Can't retrieve reports! Contact Om") }
-    if (data) { console.log(data); localData = data };
+    if (data) { console.log(data); localData = data; loadReports(); };
 }
 pullReports();
 
-// loads reports into UI
+// reloads reports into UI
 function loadReports() {
 
+    //Empty everything
+    wingA.innerHTML = '';
+    wingB.innerHTML = '';
+    wingC.innerHTML = '';
+    wingD.innerHTML = '';
+
+    //iterate through and repopulate
+    for (var report of localData) {
+        var toPush = `<img src="assets/rat.png" alt="" class="ratImage" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
+        var target_column;
+
+        //Determine which column to push under
+        if (report.wing == "A") target_column = wingA;
+        if (report.wing == "B") target_column = wingB;
+        if (report.wing == "C") target_column = wingC;
+        if (report.wing == "D") target_column = wingD;
+
+        target_column.innerHTML += toPush;  //Append
+    }
 }
