@@ -64,27 +64,27 @@
         <!-- Form to fill out -->
         <div id="reportForm" class="show">
             <div class="nameField">
-                <input id="nameInput" type="text" placeholder="Your Name [Optional]" />
+                <input id="nameInput" type="text" maxlength="15" placeholder="Your Name [Optional]" />
                 <p class="counter" data-limit="15">0/15</p>
             </div>
             <div class="descField">
-                <textarea type="textarea" id="descInput" placeholder="Description"></textarea>
-                <p class="counter" data-limit="50">0/50</p>
+                <textarea type="textarea" id="descInput" maxlength="80" placeholder="Description"></textarea>
+                <p class="counter" data-limit="50">0/80</p>
             </div>
             <div id="wingField" class="radio">
-                <div class="wingBtn" id="wingABtn" data-status="inactive">A</div>
-                <div class="wingBtn" id="wingBBtn" data-status="inactive">B</div>
-                <div class="wingBtn" id="wingCBtn" data-status="inactive">C</div>
-                <div class="wingBtn" id="wingDBtn" data-status="inactive">D</div>
+                <div class="wingBtn" id="wingABtn" data-value="A">A</div>
+                <div class="wingBtn" id="wingBBtn" data-value="B">B</div>
+                <div class="wingBtn" id="wingCBtn" data-value="C">C</div>
+                <div class="wingBtn" id="wingDBtn" data-value="D">D</div>
             </div>
             <div id="floorField" class="radio">
-                <div class="floorBtn" id="floor1Btn" data-status="inactive">1</div>
-                <div class="floorBtn" id="floor2Btn" data-status="inactive">2</div>
-                <div class="floorBtn" id="floor3Btn" data-status="inactive">3</div>
-                <div class="floorBtn" id="floor4Btn" data-status="inactive">4</div>
+                <div class="floorBtn" id="floor1Btn" data-value="0">1</div>
+                <div class="floorBtn" id="floor2Btn" data-value="1">2</div>
+                <div class="floorBtn" id="floor3Btn" data-value="2">3</div>
+                <div class="floorBtn" id="floor4Btn" data-value="3">4</div>
             </div>
             <div class="formBtns">
-                <div id="submitBtn" class="btn">
+                <div id="submitBtn" class="btn btn-off">
                     <img src="assets/report.png" alt="submit">
                     <p>SEND&nbsp&nbspREPORT</p>
                 </div>

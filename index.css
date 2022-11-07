@@ -167,6 +167,10 @@ body {
     cursor: pointer;
 }
 
+.btn-off {
+    opacity: 0.2 !important;
+}
+
 /* Only enable this for desktop */
 /* .btn:hover {
     background: var(--bg2);
@@ -291,7 +295,7 @@ textarea:focus {
     border-left: 3px solid var(--text-accent);
 }
 
-/* WING */
+/* WING & FLOOR */
 .radio::before {
     content: "Wing";
     position: absolute;
@@ -300,6 +304,10 @@ textarea:focus {
 
     font-size: 13px;
     color: var(--text-sub);
+}
+
+#floorField {
+    margin-bottom: 8px;
 }
 
 #floorField::before {
@@ -326,4 +334,14 @@ textarea:focus {
     cursor: pointer;
     width: 100%;
     text-align: center;
+
+    padding: 3px 0px;
+
+    transition: color .1s ease-in-out;
+}
+
+/* Used to highlight selected custom radio btn */
+.selected {
+    color: var(--text-accent);
+    background: linear-gradient(90deg, rgba(32, 35, 49, 0) 0%, rgba(32, 35, 49, 1) 48%, rgba(32, 35, 49, 0) 100%);
 }
