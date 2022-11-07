@@ -5,6 +5,7 @@
     --text-primary: #ffffff;
     --text-sub: #585858;
     --text-accent: #5370D9;
+    --text-accent-dim: #3B4360;
 }
 
 /* Boilerplate */
@@ -25,7 +26,7 @@ body {
     display: none;
 }
 
-/* Pageinfo at top */
+/* HEADER */
 #header {
     /* background: grey; */
 
@@ -39,7 +40,6 @@ body {
     padding-bottom: 20px;
 }
 
-/*  */
 #header p {
     color: var(--text-primary);
     font-family: 'Lato', sans-serif;
@@ -185,6 +185,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 10px;
 
     width: 100vw;
     height: max-content;
@@ -215,4 +216,65 @@ body {
 .show {
     transform: translate(0%, 0%) !important;
     transition: transform 0.3s ease-in-out !important;
+}
+
+.nameField {
+    width: 100%;
+    background-color: var(--bg2);
+    position: relative;
+
+}
+
+.descField {
+    width: 100%;
+    height: 100px;
+    background-color: var(--bg2);
+    position: relative;
+
+}
+
+#reportForm input,
+textarea {
+    background-color: var(--bg);
+
+    outline: none;
+    border: none;
+
+    border-left: 3px solid var(--text-accent-dim);
+
+    width: 100%;
+    height: 100%;
+
+    padding: 10px 15px;
+
+    user-select: all;
+
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+#reportForm input::placeholder {
+    color: var(--text-sub);
+}
+
+.descField input::placeholder {
+    position: absolute;
+}
+
+.counter {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0%, -50%);
+
+    color: var(--text-sub);
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+
+    border-radius: 2px;
 }

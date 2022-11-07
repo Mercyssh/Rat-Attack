@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rat Attack!</title>
     <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer></script>
+    <script src="data-handler.js" defer></script>
+    <script src="ui-handler.js" defer></script>
     <script src="reports.js"></script>
 </head>
 
@@ -61,13 +62,13 @@
         </div>
 
         <!-- Form to fill out -->
-        <div id="reportForm" class="">
+        <div id="reportForm" class="show">
             <div class="nameField">
-                <input id="nameInput" type="text" />
+                <input id="nameInput" type="text" placeholder="Your Name [Optional]" />
                 <p class="counter" data-limit="15">0/15</p>
             </div>
             <div class="descField">
-                <input type="text" id="descInput" />
+                <textarea type="textarea" id="descInput" placeholder="Description"></textarea>
                 <p class="counter" data-limit="50">0/50</p>
             </div>
             <div class="wingField">
@@ -75,10 +76,10 @@
             </div>
             <div class="formBtns">
                 <div id="submitBtn" class="btn">
-                    <img src="assets/report.png" alt="">
+                    <img src="assets/report.png" alt="submit">
                     <p>SEND&nbsp&nbspREPORT</p>
                 </div>
-                <img src="assets/cross.png" alt="">
+                <img id="cancelBtn" src="assets/cross.png" alt="cancel">
             </div>
         </div>
 
