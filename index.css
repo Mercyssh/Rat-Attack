@@ -14,6 +14,8 @@
     padding: 0px;
     box-sizing: border-box;
     user-select: none;
+
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -185,7 +187,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 10px;
+    row-gap: 30px;
 
     width: 100vw;
     height: max-content;
@@ -218,11 +220,11 @@ body {
     transition: transform 0.3s ease-in-out !important;
 }
 
+/* NAME AND DESCRIPTION */
 .nameField {
     width: 100%;
-    background-color: var(--bg2);
     position: relative;
-
+    background-color: var(--bg2);
 }
 
 .descField {
@@ -230,7 +232,6 @@ body {
     height: 100px;
     background-color: var(--bg2);
     position: relative;
-
 }
 
 #reportForm input,
@@ -251,6 +252,8 @@ textarea {
 
     color: white;
     font-family: 'Lato', sans-serif;
+
+    transition: border 0.2s ease-in-out;
 }
 
 textarea {
@@ -258,12 +261,12 @@ textarea {
     overflow: hidden;
 }
 
-#reportForm input::placeholder {
+textarea::placeholder {
     color: var(--text-sub);
 }
 
-.descField input::placeholder {
-    position: absolute;
+#reportForm input::placeholder {
+    color: var(--text-sub);
 }
 
 .counter {
@@ -277,4 +280,39 @@ textarea {
     font-size: 12px;
 
     border-radius: 2px;
+}
+
+.nameField input:focus {
+    border-left: 3px solid var(--text-accent) !important;
+}
+
+textarea:focus {
+    border-left: 3px solid var(--text-accent);
+}
+
+/* WING */
+#wingField::before {
+    content: "Wing";
+    position: absolute;
+    top: -30px;
+    left: 0px;
+
+    font-size: 13px;
+    color: var(--text-sub);
+}
+
+#wingField {
+    position: relative;
+    display: flex;
+
+    margin-top: 25px;
+    width: 100%;
+    padding: 0px 20px;
+    /* padding-right: 30px; */
+
+    color: var(--text-accent-dim);
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
 }
