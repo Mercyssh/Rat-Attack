@@ -240,6 +240,7 @@ textarea {
 
     outline: none;
     border: none;
+    /* border: 0.1px solid rgb(21, 21, 21); */
 
     border-left: 3px solid var(--text-accent-dim);
 
@@ -291,7 +292,7 @@ textarea:focus {
 }
 
 /* WING */
-#wingField::before {
+.radio::before {
     content: "Wing";
     position: absolute;
     top: -30px;
@@ -301,18 +302,28 @@ textarea:focus {
     color: var(--text-sub);
 }
 
-#wingField {
+#floorField::before {
+    content: "Floor";
+}
+
+.radio {
     position: relative;
     display: flex;
 
     margin-top: 25px;
     width: 100%;
     padding: 0px 20px;
-    /* padding-right: 30px; */
 
     color: var(--text-accent-dim);
     justify-content: space-between;
     align-items: center;
 
     font-size: 14px;
+}
+
+.wingBtn,
+.floorBtn {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
