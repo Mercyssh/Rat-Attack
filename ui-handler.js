@@ -28,6 +28,7 @@ function closeForm() {
     //Reset all backend trackers
     wingValue = null;
     floorValue = null;
+    allowSubmit = false;
 
     //Reset all UI
     for (var item of wingInputs) { item.classList.remove("selected") }
@@ -71,7 +72,6 @@ nameInput.addEventListener("keydown", validateInput)
 nameInput.addEventListener("keyup", validateInput)
 descInput.addEventListener("keydown", validateInput)
 descInput.addEventListener("keyup", validateInput)
-
 //#############################
 
 

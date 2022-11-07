@@ -120,6 +120,7 @@ body {
     text-align: center;
 
     margin-bottom: 10px;
+    width: 36px;
 }
 
 #wingA::before {
