@@ -14,7 +14,71 @@
 <body>
     <div class="mainContainer">
 
+        <!-- Page Header -->
+        <div id="header">
+            <p>RATATTACK</p>
+            <p>@OMRANE</p>
+        </div>
+
+        <!-- Info card -->
+        <div id="ratInfo">
+            <p id="floor">1st Floor</p>
+            <p id="description">Please do something about it! It attacked me!</p>
+            <p id="reporter">By Anonymous</p>
+        </div>
+
+        <!-- Actual grid of rats -->
+        <div id="ratGrid">
+            <div class="column" id="wingA">
+                <img src="assets/rat.png" alt="" class="ratImage" />
+                <img src="assets/rat.png" alt="" class="ratImage" />
+                <img src="assets/rat.png" alt="" class="ratImage" />
+            </div>
+            <div class="column" id="wingB">
+                <img src="assets/rat.png" alt="" class="ratImage" />
+                <img src="assets/rat.png" alt="" class="ratImage" />
+                <img src="assets/rat.png" alt="" class="ratImage" />
+                <img src="assets/rat.png" alt="" class="ratImage" />
+            </div>
+            <div class="column" id="wingC">
+                <img src="assets/rat.png" alt="" class="ratImage" />
+                <img src="assets/rat.png" alt="" class="ratImage" />
+            </div>
+            <div class="column" id="wingD">
+                <img src="assets/rat.png" alt="" class="ratImage" />
+            </div>
+        </div>
+
+        <!-- Used to fade off rat grid -->
+        <div id="bottomGradient">
+
+        </div>
+
+        <!-- To open form -->
+        <div id="reportBtn" class="">
+            <img src="" alt="">
+            <p>REPORT A RAT</p>
+        </div>
+
+        <!-- Form to fill out -->
+        <div id="reportForm" class="hide">
+            <div class="nameField">
+                <input id="nameInput" type="text" />
+                <p class="counter" data-limit="15">0/15</p>
+            </div>
+            <div class="descField">
+                <input type="text" id="descInput" />
+                <p class="counter" data-limit="50">0/50</p>
+            </div>
+            <div class="wingField">
+
+            </div>
+            <div class="formBtns">
+
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
