@@ -15,6 +15,16 @@
     <!-- Database management -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="data-handler.js" defer></script>
+
+    <!-- Time Management -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+    <script>
+        dayjs.extend(window.dayjs_plugin_utc)
+        dayjs.extend(window.dayjs_plugin_relativeTime)
+    </script>
+
 </head>
 
 <body>
@@ -28,8 +38,11 @@
 
         <!-- Info card -->
         <div id="ratInfo" class="hideInfo">
-            <p id="floor">1st Floor</p>
-            <p id="description">Please do something about it! It attacked me!</p>
+            <div class="infoTop">
+                <p id="floor">1st Floor</p>
+                <p id="time">3 Hours ago</p>
+            </div>
+            <p id="description">lorem ipsum sit sir dolot amit</p>
             <p id="reporter">By Anonymous</p>
         </div>
 

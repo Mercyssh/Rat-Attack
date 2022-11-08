@@ -3,6 +3,7 @@ const { createClient } = supabase;
 const supabaseUrl = 'https://srhvetdcccijazdjhwnk.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyaHZldGRjY2NpamF6ZGpod25rIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Njc4MTQ2NzgsImV4cCI6MTk4MzM5MDY3OH0.I2m0Nbhpfw6YyoV3UB1nk6ZlrSTR5bTnJf9kgFFtZ0M';
 const _supabase = createClient(supabaseUrl, supabaseKey);
+const data_refresh_interval = 10000; //enter value in milisecs
 
 localData = null;
 
@@ -21,7 +22,7 @@ async function pushReport() {
                 wing: wingValue,
                 floor: floorValue,
                 description: descInput.value,
-                name: nameInput.value == "" ? "Anonymous" : "nameInput.value"
+                name: nameInput.value == "" ? "Anonymous" : nameInput.value
             }]).select()
 
         // Error Handling
@@ -51,7 +52,7 @@ async function pullReports() {
 
     // Catch error
     if (error) { alert("Can't retrieve reports! Contact Om") }
-    if (data) { console.log(data); localData = data; loadReports(); };
+    if (data) { localData = data; loadReports(); };
 }
 pullReports();
 
@@ -66,7 +67,7 @@ function loadReports() {
 
     //iterate through and repopulate
     for (var report of localData) {
-        var toPush = `<img src="assets/rat.png" alt="" class="ratImage" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
+        var toPush = `<img onclick="updateInfoCard(this)" src="assets/rat.png" alt="" class="ratImage" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
         var target_column;
 
         //Determine which column to push under
@@ -78,3 +79,11 @@ function loadReports() {
         target_column.innerHTML += toPush;  //Append
     }
 }
+
+// Data Auto Reload Loop
+function pullReportsLoop() {
+    console.log('data refreshed!');
+    setTimeout(pullReportsLoop, data_refresh_interval);
+    pullReports();
+}
+setTimeout(pullReportsLoop, data_refresh_interval);

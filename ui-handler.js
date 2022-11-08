@@ -13,6 +13,12 @@ var floorInputs = document.querySelectorAll(".floorBtn");
 // others
 var reportForm = document.querySelector("#reportForm");
 
+//Info Cards
+var ratInfo = document.querySelector("#ratInfo");
+var floor = document.querySelector("#floor");
+var description = document.querySelector("#description");
+var reporter = document.querySelector("#reporter");
+
 //Grid
 var wingA = document.querySelector("#wingA");
 var wingB = document.querySelector("#wingB");
@@ -24,10 +30,34 @@ var wingValue = null;
 var floorValue = null;
 var allowSubmit = false;
 
-
 //####INFO CARDS###########
+function updateInfoCard(ele) {
+    ratInfo.classList.remove("hideInfo");   // Unhide info card
 
+    var _floor = ele.getAttribute("data-floor");    // what floor it on?
+    var _description = ele.getAttribute("data-desc");   // description of report
+    var _name = ele.getAttribute("data-name");  // Name of rat reporter
+    var _time = ele.getAttribute("data-time");    //time of report
 
+    //Time Info
+    let te = dayjs(_time);
+    var timeString = te.utc().fromNow();
+
+    //Update Floor info
+    if (_floor == "1") { floor.innerHTML = "1st Floor" };
+    if (_floor == "2") { floor.innerHTML = "2nd Floor" };
+    if (_floor == "3") { floor.innerHTML = "3rd Floor" };
+    if (_floor == "4") { floor.innerHTML = "4th Floor" };
+
+    //Update Description and Name
+    description.innerHTML = _description;
+    reporter.innerHTML = "By " + _name;
+    timeString.innerHTML = timeString;
+
+    //Highlight selected rat
+    ele.classList.add("selected-rat");
+
+}
 //#########################
 
 

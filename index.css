@@ -71,6 +71,7 @@ body {
 #ratInfo {
     margin-top: 60px;
     max-width: 260px;
+    width: max-content;
 
     display: flex;
     flex-direction: column;
@@ -81,6 +82,16 @@ body {
 
     text-align: center;
     font-family: 'Lato', sans-serif;
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+.infoTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
 }
 
 .hideInfo {
@@ -89,9 +100,17 @@ body {
 }
 
 #ratInfo #floor,
-#ratInfo #reporter {
+#ratInfo #reporter,
+#ratInfo #time {
     color: var(--text-sub);
     font-size: 12px;
+
+    word-wrap: none;
+}
+
+#time::before {
+    content: '•';
+    margin: 0px 8px;
 }
 
 #ratInfo #description {
@@ -350,4 +369,14 @@ textarea:focus {
 .selected {
     color: var(--text-accent);
     background: linear-gradient(90deg, rgba(32, 35, 49, 0) 0%, rgba(32, 35, 49, 1) 48%, rgba(32, 35, 49, 0) 100%);
+}
+
+/* Used to highlight selected rat */
+.ratImage {
+    transition: all 1s ease-in-out;
+}
+
+.selected-rat {
+    -webkit-filter: drop-shadow(0px 0px 10px #1c8ee4);
+    filter: drop-shadow(0px 0px 10px #1c8ee4);
 }
