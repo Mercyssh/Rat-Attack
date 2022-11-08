@@ -52,7 +52,14 @@ async function pullReports() {
 
     // Catch error
     if (error) { alert("Can't retrieve reports! Contact Om") }
-    if (data) { localData = data; loadReports(); ratInfo.classList.add("hideInfo") };
+    if (data) {
+        localData = data;   //Cache data
+        loadReports();  //Update the UI
+        ratInfo.classList.add("hideInfo") //Show card if hidden
+
+        const latest = document.querySelector('[data-id="' + localData[0].id + '"]');
+        updateInfoCard(latest);
+    };
 }
 pullReports();
 
@@ -67,7 +74,7 @@ function loadReports() {
 
     //iterate through and repopulate
     for (var report of localData) {
-        var toPush = `<img onclick="updateInfoCard(this)" src="assets/rat.png" alt="rat" class="ratImage" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
+        var toPush = `<img onclick="updateInfoCard(this)" src="assets/rat.png" alt="rat" class="ratImage" data-id="${report.id}" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
         var target_column;
 
         //Determine which column to push under
