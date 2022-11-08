@@ -3,6 +3,7 @@
 var reportBtn = document.querySelector("#reportBtn");
 var cancelBtn = document.querySelector("#cancelBtn");
 var submitBtn = document.querySelector("#submitBtn");
+var refreshBtn = document.querySelector("#refreshBtn");
 
 // Input Fields
 var nameInput = document.querySelector("#nameInput");
@@ -52,7 +53,13 @@ function updateInfoCard(ele) {
     //Update Description and Name
     description.innerHTML = _description;
     reporter.innerHTML = "By " + _name;
-    timeString.innerHTML = timeString;
+    time.innerHTML = timeString;
+
+    // unHighlight all rats
+    var rats = document.querySelectorAll(".ratImage");
+    for (var rat of rats) {
+        rat.classList.remove("selected-rat");
+    }
 
     //Highlight selected rat
     ele.classList.add("selected-rat");

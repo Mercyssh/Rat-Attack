@@ -50,6 +50,11 @@ body {
     font-size: 11px;
 }
 
+/* refresh btn */
+#refreshBtn {
+    cursor: pointer;
+}
+
 /* Main container */
 .mainContainer {
     width: 100vw;
@@ -375,6 +380,7 @@ textarea:focus {
 /* Used to highlight selected rat */
 .ratImage {
     transition: all 1s ease-in-out;
+    cursor: pointer;
 }
 
 .selected-rat {

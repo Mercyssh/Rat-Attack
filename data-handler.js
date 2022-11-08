@@ -52,7 +52,7 @@ async function pullReports() {
 
     // Catch error
     if (error) { alert("Can't retrieve reports! Contact Om") }
-    if (data) { localData = data; loadReports(); };
+    if (data) { localData = data; loadReports(); ratInfo.classList.add("hideInfo") };
 }
 pullReports();
 
@@ -67,7 +67,7 @@ function loadReports() {
 
     //iterate through and repopulate
     for (var report of localData) {
-        var toPush = `<img onclick="updateInfoCard(this)" src="assets/rat.png" alt="" class="ratImage" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
+        var toPush = `<img onclick="updateInfoCard(this)" src="assets/rat.png" alt="rat" class="ratImage" data-floor="${report.floor}" data-time="${report.created_at}" data-desc="${report.description}" data-name="${report.name}"/>`
         var target_column;
 
         //Determine which column to push under
@@ -80,10 +80,16 @@ function loadReports() {
     }
 }
 
-// Data Auto Reload Loop
+//#######REFRESH BTN#######
+refreshBtn.addEventListener("click", pullReports)
+//#########################
+
+
+/* Data Auto Reload Loop
 function pullReportsLoop() {
     console.log('data refreshed!');
     setTimeout(pullReportsLoop, data_refresh_interval);
     pullReports();
 }
 setTimeout(pullReportsLoop, data_refresh_interval);
+*/
